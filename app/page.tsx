@@ -1,9 +1,9 @@
-import Notes from "./components/Notes";
+import Cours from "./components/Cours";
 
 export default function Home() {
   return (
     <div>
-      <Notes />
+      <Cours />
     </div>
   );
 }
