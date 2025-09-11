@@ -1,0 +1,22 @@
+import Link from "next/link";
+
+import Image from "next/image";
+import styles from "../style/components/Header.module.scss";
+
+export default function Header() {
+  return (
+    <header className={styles.header}>
+      <div className={styles.link_container}>
+        <Link href={"/"}>
+          <Image
+            src={"/img/logo_fac_psycho.svg"}
+            className={styles.logo_img}
+            width={100}
+            height={100}
+            alt="Logo"
+            />
+        </Link>
+      </div>
+    </header>
+  );
+}
