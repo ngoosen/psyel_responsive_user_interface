@@ -11,6 +11,7 @@ export interface INSCRIPTION {
 export default function useInscriptions(): [
   INSCRIPTION[],
   CallableFunction,
+  CallableFunction,
 ] {
   const [inscriptions, setInscriptions] = useState<INSCRIPTION[]>([]);
 
@@ -20,13 +21,25 @@ export default function useInscriptions(): [
       const data = await res.json();
 
       setInscriptions(data);
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getInscription(matricule: string) {
+    try {
+      const res = await fetch("/api/inscriptions/" + matricule);
+      const data = await res.json();
+
+      setInscriptions(data);
+    } catch (error) {
+      console.log(error);
     }
   }
 
   return [
     inscriptions,
     getInscriptions,
+    getInscription,
   ];
 }
