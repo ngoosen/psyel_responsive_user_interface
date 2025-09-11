@@ -1,9 +1,9 @@
-import Inscriptions from "./components/Inscriptions";
+import Notes from "./components/Notes";
 
 export default function Home() {
   return (
     <div>
-      <Inscriptions />
+      <Notes />
     </div>
   );
 }
