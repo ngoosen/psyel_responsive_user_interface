@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 
-import Image from "next/image";
 import styles from "../style/components/Header.module.scss";
 
 export default function Header() {
@@ -16,6 +16,16 @@ export default function Header() {
             alt="Logo"
             />
         </Link>
+      </div>
+
+      <div className={styles.user_profile_container}>
+        <Image
+          src={"/img/default_profile_picture.jpg"}
+          className={styles.profile_picture}
+          width={100}
+          height={100}
+          alt="User profile picture"
+        />
       </div>
     </header>
   );
