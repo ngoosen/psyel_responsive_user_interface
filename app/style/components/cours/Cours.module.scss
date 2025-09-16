@@ -20,6 +20,16 @@
 
 @media (max-width: 400px) {
   .main {
+    input {
+      &::before {
+        content: "Cours ▾";
+      }
+
+      &:checked::before {
+        content: "Cours ▴";
+      }
+    }
+
     article {
       display: none;
     }

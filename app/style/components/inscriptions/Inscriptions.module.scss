@@ -24,6 +24,16 @@
 
 @media (max-width: 400px) {
   .main {
+    input {
+      &::before {
+        content: "Inscriptions ▾";
+      }
+
+      &:checked::before {
+        content: "Inscriptions ▴";
+      }
+    }
+
     .inscriptions_list {
       display: none;
     }
