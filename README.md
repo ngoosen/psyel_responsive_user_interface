@@ -1,4 +1,8 @@
+# PSYEL Responsive User Interface
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+The objective of this project is to create a responsive user interface using an external API for [ULB's Faculté de Psychologie des Sciences de l'Éducation et de Logopédie](https://psycho.ulb.be/).
 
 ## Getting Started
 
@@ -20,17 +24,18 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Progress
 
-To learn more about Next.js, take a look at the following resources:
+I chose to use a simple design, for a time reason as well as for clarity and easy and intuitive use.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+I decided to use this project to challenge my CSS skills by using as few libraries as possible and use a CSS first approach. For this reason, I also tried to not use too much Typescript for user interaction.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+For this project, I developed a local proxy that consumes an external API, using the tools offered by Next.js.
 
-## Deploy on Vercel
+## Next up
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is not yet quite done. Things I still need to work on includes (but are not limited to):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Finishing the `Cours page` design by adding the lesson's attendees and their respective notes
+- Add a global context to handle the data and reduce/optimize the current API calls
+- Really show off my CSS/SCSS skills by adding crispier transitions, animations and interactions for a beautiful and less boring design.
