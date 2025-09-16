@@ -1,0 +1,43 @@
+@import "../../../variables";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  padding: 20px 30px;
+
+  background-color: #ffffff;
+
+  border-radius: 10px;
+
+  .cours_link {
+    text-decoration: underline;
+    text-align: center;
+    font-size: 1.4rem;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  .professor_name {
+    font-size: .95rem;
+
+    span {
+      font-weight: 600;
+      color: $blue;
+    }
+  }
+
+  .details {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-top: 15px;
+  }
+}

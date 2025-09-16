@@ -25,12 +25,19 @@
 @media (max-width: 400px) {
   .main {
     input {
-      &::before {
-        content: "Inscriptions ▾";
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding-top: 10px;
+
+      &::after {
+        content: "▾";
+        font-size: 2rem;
       }
 
-      &:checked::before {
-        content: "Inscriptions ▴";
+      &:checked::after {
+        content: "▴";
       }
     }
 

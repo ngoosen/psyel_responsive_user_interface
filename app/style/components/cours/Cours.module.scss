@@ -13,7 +13,14 @@
     }
   }
 
-  article {
+  ul {
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+
+    margin-bottom: 20px;
     padding: 10px 20px;
   }
 }
@@ -21,21 +28,30 @@
 @media (max-width: 400px) {
   .main {
     input {
-      &::before {
-        content: "Cours ▾";
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding-top: 10px;
+
+      &::after {
+        content: "▾";
+        font-size: 2rem;
       }
 
-      &:checked::before {
-        content: "Cours ▴";
+      &:checked::after {
+        content: "▴";
       }
     }
 
-    article {
+    ul {
       display: none;
     }
 
-    input:checked + article {
-      display: block;
+    input:checked + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
     }
   }
 }
