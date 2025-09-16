@@ -1,0 +1,46 @@
+.main {
+  display: flex;
+
+  width: 80lvw;
+  height: 100lvh;
+
+  margin: 0 10lvw;
+
+  background-color: #ffffff;
+
+  .dashboard_container {
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+
+    margin: 30px;
+
+    article {
+      border-radius: 10px;
+
+      background-color: #bdcedd;
+      color: #161f27;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    .dashboard_container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+
+@media (max-width: 400px) {
+  .main {
+    width: 100lvw;
+
+    margin: 0;
+
+    background-color: #004994;
+  }
+}

@@ -1,0 +1,31 @@
+.main {
+  input {
+    appearance: none;
+
+    width: 100%;
+
+    padding: 10px 20px;
+    padding-top: 20px;
+
+    &::before {
+      content: "Inscriptions";
+      font-size: 2rem;
+    }
+  }
+
+  article {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .main {
+    article {
+      display: none;
+    }
+
+    input:checked + article {
+      display: block;
+    }
+  }
+}
