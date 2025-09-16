@@ -17,14 +17,28 @@ export default function InscriptionPageCoursList(props: INSCRIPTION_PAGE_ANNEE_E
   } = props;
 
   return (
-    <article>
-      <p>Année d&apos;étude: {inscription.annee_etude}</p>
+    <article className={styles.main}>
+      <div>
+        <h4>Cours</h4>
+        <p>Année d&apos;étude {inscription.annee_etude}</p>
+      </div>
 
-      <ul className={styles.cours_list}>
-        {inscription.cours_json.map((mnemonique) => (
-          <InscriptionPageCoursListItem key={`inscription__cours_${mnemonique}`} cours={cours.find(c => c.mnemonique === mnemonique)} />
-        ))}
-      </ul>
+      <table className={styles.cours_table}>
+        <thead>
+          <tr>
+            <th>Intitulé</th>
+            <th>Professeur titulaire</th>
+            <th>Crédits</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {inscription.cours_json.map((mnemonique) => (
+            <InscriptionPageCoursListItem key={`inscription__cours_${mnemonique}`} cours={cours.find(c => c.mnemonique === mnemonique)} />
+          ))}
+        </tbody>
+      </table>
     </article>
   );
 }

@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
+import localFont from "next/font/local";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
 
@@ -9,6 +10,9 @@ import styles from "../../../style/components/inscriptions/inscription_page/Insc
 import useCours from "@/app/hooks/useCours";
 import useInscriptions from "@/app/hooks/useInscriptions";
 import InscriptionPageCoursList from "./InscriptionPageCoursList";
+
+const firaSansLight = localFont({ src: "../../../assets/fonts/FiraSans-Light.ttf" });
+const firaSansSemiBold = localFont({ src: "../../../assets/fonts/FiraSans-SemiBold.ttf" });
 
 export default function InscriptionPage() {
   const params = useParams<{ matricule: string }>();
@@ -27,8 +31,9 @@ export default function InscriptionPage() {
     return (
       <main className={styles.main}>
         <section className={styles.inscription_data}>
-          <h2>{inscription[0].nom} {inscription[0].prenom}</h2>
-          <p>Matricule: {inscription[0].matricule}</p>
+          <h2 className={firaSansLight.className}>Fiche étudiant</h2>
+          <h3 className={firaSansSemiBold.className}>{inscription[0].nom.toUpperCase()} {inscription[0].prenom}</h3>
+          <p className={styles.matricule}>Matricule: {inscription[0].matricule}</p>
 
           <section className={styles.inscription_annee_etude}>
             {inscription.map((inscr, index) => (

@@ -2,8 +2,6 @@ import InscriptionPage from "@/app/components/inscriptions/inscription_page/Insc
 
 export default function Inscription() {
   return (
-    <>
-      <InscriptionPage />
-    </>
+    <InscriptionPage />
   )
 }

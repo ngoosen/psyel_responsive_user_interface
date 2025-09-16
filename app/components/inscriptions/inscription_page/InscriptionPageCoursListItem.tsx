@@ -12,11 +12,22 @@ export default function InscriptionPageCoursListItem(props: INSCRIPTION_PAGE_COU
 
   if (cours) {
     return (
-      <li className={styles.main}>
-        <Link href={`/cours/${cours.mnemonique}`}>
-          {cours.intitule}
-        </Link>
-      </li>
+      <tr className={styles.main}>
+        <td>
+          <Link href={`/cours/${cours.mnemonique}`} className={styles.cours_link}>
+            {cours.intitule}
+          </Link>
+        </td>
+        <td>
+          {cours.titulaire}
+        </td>
+        <td>
+          {cours.credit}
+        </td>
+        <td>
+          5
+        </td>
+      </tr>
     );
   }
 

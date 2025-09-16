@@ -1,26 +1,38 @@
 .main {
   width: 80lvw;
-  height: 100lvh;
+  min-height: 50lvh;
 
   margin: 0 10lvw;
 
   background-color: #ffffff;
 
   .inscription_data {
-    padding: 20px;
+    padding: 20px min(5lvw, 30px);
 
-    background-color: chartreuse;
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+      margin-top: 20px;
+    }
+
+    .matricule {
+      margin-bottom: 30px;
+    }
 
     .inscription_annee_etude {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       gap: 20px;
-
-      background-color: rebeccapurple;
-
-      > article {
-        background-color: cadetblue;
-      }
     }
+  }
+}
+
+@media (max-width: 400px) {
+  .main {
+    width: 90lvw;
+    margin: 0 5lvw;
   }
 }
