@@ -1,0 +1,54 @@
+@import "../../../../variables";
+
+.main {
+  display: flex;
+
+  width: 80lvw;
+  height: 100lvh;
+
+  margin: 0 10lvw;
+
+  background-color: #ffffff;
+  color: $dark_blue;
+
+  .cours_data {
+    width: 100%;
+
+    padding: 20px min(5lvw, 30px);
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+      margin-top: 20px;
+
+      span {
+        font-size: .8em;
+        display: inline-block;
+      }
+    }
+
+    .mnemonique {
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .main {
+    width: 90lvw;
+    margin: 0 5lvw;
+
+    .cours_data {
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      h3 {
+        font-size: 2rem;
+      }
+    }
+  }
+}
