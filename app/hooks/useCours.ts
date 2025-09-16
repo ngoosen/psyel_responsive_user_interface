@@ -16,7 +16,7 @@ export default function useCours(): [
 
   async function getCours() {
     try {
-      const res = await fetch("api/cours");
+      const res = await fetch("/api/cours");
       const data = await res.json();
 
       setCours(data);
@@ -27,7 +27,7 @@ export default function useCours(): [
 
   async function getCoursByMnemonique(mnemonique: string) {
     try {
-      const res = await fetch(`api/cours/${mnemonique}`);
+      const res = await fetch(`/api/cours/${mnemonique}`);
       const data = await res.json();
 
       setCours(data);

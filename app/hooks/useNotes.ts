@@ -18,7 +18,7 @@ export default function useNotes(): [
 
   async function getNotes() {
     try {
-      const res = await fetch("api/notes");
+      const res = await fetch("/api/notes");
       const data = await res.json();
 
       setNotes(data);
@@ -29,7 +29,7 @@ export default function useNotes(): [
 
   async function getNotesByMatricule(matricule: string) {
     try {
-      const res = await fetch("api/notes?matricule=" + matricule);
+      const res = await fetch("/api/notes?matricule=" + matricule);
       const data = await res.json();
 
       setNotes(data);
@@ -40,7 +40,7 @@ export default function useNotes(): [
 
   async function getNotesByMnemonique(mnemonique: string) {
     try {
-      const res = await fetch("api/notes?mnemonique=" + mnemonique);
+      const res = await fetch("/api/notes?mnemonique=" + mnemonique);
       const data = await res.json();
 
       setNotes(data);
@@ -51,7 +51,7 @@ export default function useNotes(): [
 
   async function getNotesByMatriculeAndMnemonique(matricule: string, mnemonique: string) {
     try {
-      const res = await fetch(`api/notes?matricule=${matricule}&mnemonique=${mnemonique}`);
+      const res = await fetch(`/api/notes?matricule=${matricule}&mnemonique=${mnemonique}`);
       const data = await res.json();
 
       setNotes(data);
