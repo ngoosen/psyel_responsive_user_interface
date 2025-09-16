@@ -30,7 +30,15 @@
       }
     }
 
-    .mnemonique {
+    .details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px 20px;
+
+      width: min(70lvw, 500px);
+
       margin-top: 10px;
     }
   }

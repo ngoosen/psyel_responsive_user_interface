@@ -10,6 +10,7 @@ import styles from "../../../style/components/cours/cours_page/CoursPage.module.
 import useCours, { COURS } from "@/app/hooks/useCours";
 import useInscriptions from "@/app/hooks/useInscriptions";
 import useNotes from "@/app/hooks/useNotes";
+import CoursPageInscriptionsList from "./CoursPageInscriptionsList";
 
 const firaSansLight = localFont({ src: "../../../assets/fonts/FiraSans-Light.ttf" });
 const firaSansSemiBold = localFont({ src: "../../../assets/fonts/FiraSans-SemiBold.ttf" });
@@ -19,14 +20,14 @@ export default function CoursPage() {
 
   const [cours,, getCoursByMnemonique] = useCours();
   const [notes, getNotes] = useNotes();
-  const [inscription, getInscriptions] = useInscriptions();
+  const [inscriptions, getInscriptions] = useInscriptions();
 
   const [currentCours, setCurrentCours] = useState<COURS>();
 
   useEffect(() => {
     getCoursByMnemonique(params.mnemonique);
-    // getNotes();
-    // getInscriptions();
+    getNotes();
+    getInscriptions();
   }, []);
 
   useEffect(() => {
@@ -41,7 +42,13 @@ export default function CoursPage() {
         <section className={styles.cours_data}>
           <h2 className={firaSansLight.className}>Fiche de cours</h2>
           <h3 className={firaSansSemiBold.className}>{currentCours.intitule} <span className={firaSansLight.className}>({currentCours.credit} ECTS)</span></h3>
-          <p className={styles.mnemonique}>Mnémonique: {currentCours.mnemonique}</p>
+
+          <div className={styles.details}>
+            <p className={styles.mnemonique}>Mnémonique: {currentCours.mnemonique}</p>
+            <p>Professeur titulaire: {currentCours.titulaire}</p>
+          </div>
+
+          <CoursPageInscriptionsList inscriptions={inscriptions} notes={notes} />
         </section>
       </main>
     );
