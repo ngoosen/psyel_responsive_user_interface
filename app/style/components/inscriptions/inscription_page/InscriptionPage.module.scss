@@ -1,0 +1,26 @@
+.main {
+  width: 80lvw;
+  height: 100lvh;
+
+  margin: 0 10lvw;
+
+  background-color: #ffffff;
+
+  .inscription_data {
+    padding: 20px;
+
+    background-color: chartreuse;
+
+    .inscription_annee_etude {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+
+      background-color: rebeccapurple;
+
+      > article {
+        background-color: cadetblue;
+      }
+    }
+  }
+}
