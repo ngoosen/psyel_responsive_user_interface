@@ -1,7 +1,8 @@
 import Link from "next/link";
 
-import { COURS } from "@/app/hooks/useCours";
 import styles from "../../../style/components/inscriptions/inscription_page/InscriptionPageCoursListItem.module.scss";
+
+import { COURS } from "@/app/hooks/useCours";
 
 interface INSCRIPTION_PAGE_COURS_LIST_ITEM_PROPS {
   cours?: COURS;
