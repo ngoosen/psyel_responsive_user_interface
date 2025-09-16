@@ -2,7 +2,7 @@
   display: flex;
 
   width: 80lvw;
-  height: 100lvh;
+  // height: 100lvh;
 
   margin: 0 10lvw;
 
@@ -12,12 +12,12 @@
     flex: 1;
 
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 3fr;
     gap: 20px;
 
     margin: 30px;
 
-    article {
+    > article {
       border-radius: 10px;
 
       background-color: #bdcedd;
