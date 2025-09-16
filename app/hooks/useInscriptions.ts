@@ -5,7 +5,7 @@ export interface INSCRIPTION {
   nom: string;
   prenom: string;
   annee_etude: number;
-  cours_json: string;
+  cours_json: string[];
 }
 
 export default function useInscriptions(): [
@@ -31,7 +31,22 @@ export default function useInscriptions(): [
       const res = await fetch("/api/inscriptions/" + matricule);
       const data = await res.json();
 
-      setInscriptions(data);
+      setInscriptions(() => {
+        const destructuredCours = data.map((d: {
+          matricule: string;
+          nom: string;
+          prenom: string;
+          annee_etude: number;
+          cours_json: string;
+        }) => {
+          return {
+            ...d,
+            cours_json: JSON.parse(d.cours_json),
+          }
+        });
+
+        return destructuredCours;
+      });
     } catch (error) {
       console.log(error);
     }
