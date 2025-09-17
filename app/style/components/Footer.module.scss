@@ -1,10 +1,34 @@
 @import "../../variables";
 
 .footer {
+  position: relative;
+
   width: 100lvw;
 
   background-color: $dark_navy_blue;
   color: #ffffff;
+
+  &::before {
+    $bgImgWidth: 600px;
+
+    content: "";
+
+    position: absolute;
+
+    display: block;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("/img/footer/ulb-sceau.png");
+    background-repeat: no-repeat;
+    background-size: auto $bgImgWidth;
+    background-position: -(calc($bgImgWidth / 2)) 90%;
+
+    opacity: .2;
+  }
 
   .links {
     display: flex;
@@ -14,5 +38,13 @@
     gap: 40px;
 
     margin: 0 15lvw;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer {
+    &::before {
+      display: none;
+    }
   }
 }
