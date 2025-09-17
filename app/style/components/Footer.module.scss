@@ -79,6 +79,133 @@
       }
     }
 
+    .faculties {
+      ul {
+        li {
+          p {
+            &::before {
+              content: "";
+
+              display: inline-block;
+
+              width: 12px;
+              height: 12px;
+
+              margin-right: 10px;
+
+              background-color: #ffffff;
+
+              clip-path: polygon(100% 0, 100% 100%, 0 100%);
+            }
+          }
+        }
+
+        #phisoc {
+          p::before {
+            background-color: #0099cc;
+          }
+        }
+
+        #ltc {
+          p::before {
+            background-color: #858791;
+          }
+        }
+
+        #droit {
+          p::before {
+            background-color: #a11f7d;
+          }
+        }
+
+        #sbsem {
+          p::before {
+            background-color: #f6a924;
+          }
+        }
+
+        #psycho {
+          p::before {
+            background-color: #006bb3;
+          }
+        }
+
+        #psycho_cambre {
+          p::before {
+            background-color: #90be45;
+          }
+        }
+
+        #psycho_sciences {
+          p::before {
+            background-color: #6c5098;
+          }
+        }
+
+        #polytech {
+          p::before {
+            background-color: #1a171b;
+          }
+        }
+
+        #medecine {
+          p::before {
+            background-color: #e32119;
+          }
+        }
+
+        #pharmacie {
+          p::before {
+            background-color: #008751;
+          }
+        }
+
+        #psycho_sante_publique {
+          p::before {
+            background-color: #e32119;
+          }
+        }
+
+        #fsm {
+          p::before {
+            background-color: #e32119;
+          }
+        }
+
+        //hr
+
+        #ltc_cooremans {
+          p::before {
+            background-color: #858791;
+          }
+        }
+
+        #bioing {
+          p::before {
+            background-color: #00a59a;
+          }
+        }
+
+        #psycho_pole_sante {
+          p::before {
+            background-color: #e32119;
+          }
+        }
+
+        #iee {
+          p::before {
+            background-color: #00509a;
+          }
+        }
+
+        #education {
+          p::before {
+            background-color: #163e69;
+          }
+        }
+      }
+    }
+
     .socials {
       h3,
       ul {

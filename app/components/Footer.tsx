@@ -73,88 +73,88 @@ export default function Footer() {
           <h3 className={firaSansRegular.className}>Facultés, instituts et écoles</h3>
 
           <ul>
-            <li>
+            <li id={styles.phisoc}>
               <Link href={"https://phisoc.ulb.be/"} className={styles.link}>
                 <p>Faculté de Philosophie et Sciences sociales</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.ltc}>
               <Link href={"https://ltc.ulb.be/"} className={styles.link}>
                 <p>Faculté de Lettres, Traduction et Communication</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.droit}>
               <Link href={"https://droit.ulb.be/"} className={styles.link}>
                 <p>Faculté de Droit et de Criminologie</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.sbsem}>
               <Link href={"https://sbsem.ulb.be/"} className={styles.link}>
                 <p>Solvay Brussels School of Economics and Management</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.psycho}>
               <Link href={"https://psycho.ulb.be/"} className={styles.link}>
                 <p>Faculté de Psychologie, des Sciences de l&apos;Éducation et de Logopédie</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.psycho_cambre}>
               <Link href={"psycho.ulb.be/faculte-d-architecture-la-cambre-horta"} className={styles.link}>
                 <p>Faculté d&apos;Architecture La Cambre Horta</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.psycho_sciences}>
               <Link href={"psycho.ulb.be/faculte-des-sciences"} className={styles.link}>
                 <p>Faculté des Sciences</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.polytech}>
               <Link href={"https://polytech.ulb.be/"} className={styles.link}>
                 <p>École polytechnique de Bruxelles</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.medecine}>
               <Link href={"https://medecine.ulb.be/"} className={styles.link}>
                 <p>Faculté de Médecine</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.pharmacie}>
               <Link href={"https://pharmacie.ulb.be/"} className={styles.link}>
                 <p>Faculté de Pharmacie</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.psycho_sante_publique}>
               <Link href={"psycho.ulb.be/ecole-de-sante-publique"} className={styles.link}>
                 <p>École de Santé publique</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.fsm}>
               <Link href={"https://fsm.ulb.be/"} className={styles.link}>
                 <p>Faculté des Sciences de la Motricité</p>
               </Link>
             </li>
             <hr />
-            <li>
+            <li id={styles.ltc_cooremans}>
               <Link href={"https://ltc.ulb.be/nos-departements-d-enseignement/ecole-de-traduction-et-interpretation-isti-cooremans-1"} className={styles.link}>
                 <p>École de Traduction et Interprétation ISTI - Cooremans</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.bioing}>
               <Link href={"https://bioing.ulb.be/"} className={styles.link}>
                 <p>École de Bioingénierie de Bruxelles</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.psycho_pole_sante}>
               <Link href={"psycho.ulb.be/pole-sante"} className={styles.link}>
                 <p>Pôle Santé</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.iee}>
               <Link href={"https://iee.ulb.be/"} className={styles.link}>
                 <p>Institut d&apos;études européennes</p>
               </Link>
             </li>
-            <li>
+            <li id={styles.education}>
               <Link href={"https://education.ulb.be/"} className={styles.link}>
                 <p>Pôle éducation</p>
               </Link>
