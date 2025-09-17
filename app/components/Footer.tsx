@@ -8,6 +8,7 @@ import FooterEdging from "./ui/FooterEdging";
 
 const openSans400 = localFont({ src: "../assets/fonts/OpenSans400.woff", });
 const firaSansRegular = localFont({ src: "../assets/fonts/FiraSans-Regular.ttf", });
+const firaSansSemiBold = localFont({ src: "../assets/fonts/FiraSans-SemiBold.ttf", });
 
 export default function Footer() {
   return (
@@ -226,7 +227,7 @@ export default function Footer() {
                 height={100}
                 alt="Conversation bubbles"
               />
-              <p>Contacts</p>
+              <p className={firaSansSemiBold.className}>Contacts</p>
             </Link>
             <Link href={"https://psycho.ulb.be/emploi"} className={styles.link}>
               <Image
@@ -235,10 +236,22 @@ export default function Footer() {
                 height={100}
                 alt="CV pile"
               />
-              <p>Emploi</p>
+              <p className={firaSansSemiBold.className}>Emploi</p>
             </Link>
           </div>
         </article>
+      </section>
+
+      <section className={`${styles.legal} ${firaSansSemiBold.className}`}>
+        <Link href={"https://www.ulb.be/fr/mentions-legales"} className={styles.link}>
+          <p>Mentions légales</p>
+        </Link>
+        <Link href={"/"} className={styles.link}>
+          <p>Gestionnaire de cookies</p>
+        </Link>
+        <Link href={"/"} className={styles.accesses}>
+          <p>Accès restreints ▴</p>
+        </Link>
       </section>
     </footer>
   );

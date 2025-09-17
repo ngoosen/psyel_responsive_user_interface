@@ -5,8 +5,6 @@
 
   width: 100lvw;
 
-  padding-bottom: 7lvh;
-
   background-color: $dark_navy_blue;
   color: #ffffff;
 
@@ -28,7 +26,7 @@
     background-image: url("/img/footer/ulb-sceau.png");
     background-repeat: no-repeat;
     background-size: auto $bgImgWidth;
-    background-position: -(calc($bgImgWidth / 2)) 90%;
+    background-position: -(calc($bgImgWidth / 2)) 60%;
 
     opacity: .1;
   }
@@ -44,6 +42,7 @@
     gap: 100px 50px;
 
     margin: 0 13lvw;
+    padding-bottom: 7lvh;
 
     > article {
       h3 {
@@ -56,27 +55,16 @@
 
         li {
           margin: 7px 0;
-
-          .link {
-            p {
-              width: fit-content;
-              font-size: 1.1rem;
-            }
-
-            &:hover {
-              cursor: pointer;
-
-              p {
-                background-color: $navy_blue;
-              }
-            }
-          }
         }
 
         hr {
           margin: 15px 0;
         }
       }
+    }
+
+    .about {
+      width: 8lvw;
     }
 
     .faculties {
@@ -247,6 +235,56 @@
       img {
         width: auto;
         height: auto;
+      }
+    }
+  }
+
+  .legal {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    width: 100%;
+
+    padding: 0 15lvw;
+
+    background-color: $deep_blue;
+
+    .link {
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .accesses {
+      margin-left: auto;
+
+      p {
+        text-transform: uppercase;
+
+        padding: 2lvh 2lvw;
+
+        background-color: #00172d;
+      }
+    }
+  }
+
+  .link {
+    width: fit-content;
+
+    p {
+      width: fit-content;
+      font-size: 1.1rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      p {
+        background-color: $navy_blue;
       }
     }
   }
