@@ -1,0 +1,18 @@
+@import "../../variables";
+
+.footer {
+  width: 100lvw;
+
+  background-color: $dark_navy_blue;
+  color: #ffffff;
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    margin: 0 15lvw;
+  }
+}

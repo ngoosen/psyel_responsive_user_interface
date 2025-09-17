@@ -1,0 +1,58 @@
+.edging {
+  display: flex;
+
+  width: 100%;
+  height: 10px;
+
+  margin-bottom: 13lvh;
+
+  span {
+    flex: 1;
+
+    height: 100%;
+
+    &:nth-child(1) {
+      background-color: #000000;
+    }
+
+    &:nth-child(2) {
+      background-color: #e6027c;
+    }
+
+    &:nth-child(3) {
+      background-color: #8fc149;
+    }
+
+    &:nth-child(4) {
+      background-color: #0286b1;
+    }
+
+    &:nth-child(5) {
+      background-color: #87888a;
+    }
+
+    &:nth-child(6) {
+      background-color: #e62213;
+    }
+
+    &:nth-child(7) {
+      background-color: #0269b5;
+    }
+
+    &:nth-child(8) {
+      background-color: #6f4f9b;
+    }
+
+    &:nth-child(9) {
+      background-color: #f9a823;
+    }
+
+    &:nth-child(10) {
+      background-color: #0e4c9c;
+    }
+
+    &:nth-child(11) {
+      background-color: #008438;
+    }
+  }
+}
