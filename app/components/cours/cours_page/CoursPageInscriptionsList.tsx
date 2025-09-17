@@ -14,6 +14,7 @@ interface COURS_PAGE_INSCRIPTIONS_LIST_PROPS {
 
 export interface COURS_INSCRIPTION_NOTE {
   fullName: string;
+  matricule: string;
   anneeEtude: number;
   note?: number;
 }
@@ -36,6 +37,7 @@ export default function CoursPageInscriptionsList(props: COURS_PAGE_INSCRIPTIONS
 
       let adjustedResult: COURS_INSCRIPTION_NOTE = {
         fullName: `${inscr.nom.toUpperCase()} ${inscr.prenom}`,
+        matricule: inscr.matricule,
         anneeEtude: inscr.annee_etude,
       }
 

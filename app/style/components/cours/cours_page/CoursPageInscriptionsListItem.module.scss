@@ -19,11 +19,19 @@
     &:last-of-type {
       border-radius: 0 $borderRadius $borderRadius 0;
     }
+
+    .inscription_link {
+      text-decoration: underline;
+    }
   }
 
   &:nth-of-type(even) {
     td {
       background-color: #ffffff;
+
+      .inscription_link:hover {
+        color: $blue;
+      }
     }
   }
 
@@ -31,6 +39,10 @@
     td {
       background-color: $blue;
       color: #ffffff;
+
+      .inscription_link:hover {
+        color: $dark_blue;
+      }
     }
   }
 }
