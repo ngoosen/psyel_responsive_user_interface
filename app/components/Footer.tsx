@@ -20,22 +20,22 @@ export default function Footer() {
 
           <ul>
             <li>
-              <Link href={"https://psycho.ulb.be/futur-etudiant"}>
+              <Link href={"https://psycho.ulb.be/futur-etudiant"} className={styles.link}>
                 <p>Futur étudiant</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://psycho.ulb.be/etudiant"}>
+              <Link href={"https://psycho.ulb.be/etudiant"} className={styles.link}>
                 <p>Étudiant</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://psycho.ulb.be/doctorant"}>
+              <Link href={"https://psycho.ulb.be/doctorant"} className={styles.link}>
                 <p>Doctorant</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://psycho.ulb.be/chercheur"}>
+              <Link href={"https://psycho.ulb.be/chercheur"} className={styles.link}>
                 <p>Chercheur</p>
               </Link>
             </li>
@@ -47,22 +47,22 @@ export default function Footer() {
 
           <ul>
             <li>
-              <Link href={"https://psycho.ulb.be/les-etudes-1"}>
+              <Link href={"https://psycho.ulb.be/les-etudes-1"} className={styles.link}>
                 <p>Les études</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://psycho.ulb.be/catalogue-des-formations"}>
+              <Link href={"https://psycho.ulb.be/catalogue-des-formations"} className={styles.link}>
                 <p>Catalogue des formations</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://psycho.ulb.be/mobilite"}>
+              <Link href={"https://psycho.ulb.be/mobilite"} className={styles.link}>
                 <p>Mobilité</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://psycho.ulb.be/vie-sur-les-campus"}>
+              <Link href={"https://psycho.ulb.be/vie-sur-les-campus"} className={styles.link}>
                 <p>Vie sur le campus</p>
               </Link>
             </li>
@@ -74,88 +74,88 @@ export default function Footer() {
 
           <ul>
             <li>
-              <Link href={"https://phisoc.ulb.be/"}>
+              <Link href={"https://phisoc.ulb.be/"} className={styles.link}>
                 <p>Faculté de Philosophie et Sciences sociales</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://ltc.ulb.be/"}>
+              <Link href={"https://ltc.ulb.be/"} className={styles.link}>
                 <p>Faculté de Lettres, Traduction et Communication</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://droit.ulb.be/"}>
+              <Link href={"https://droit.ulb.be/"} className={styles.link}>
                 <p>Faculté de Droit et de Criminologie</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://sbsem.ulb.be/"}>
+              <Link href={"https://sbsem.ulb.be/"} className={styles.link}>
                 <p>Solvay Brussels School of Economics and Management</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://psycho.ulb.be/"}>
+              <Link href={"https://psycho.ulb.be/"} className={styles.link}>
                 <p>Faculté de Psychologie, des Sciences de l&apos;Éducation et de Logopédie</p>
               </Link>
             </li>
             <li>
-              <Link href={"psycho.ulb.be/faculte-d-architecture-la-cambre-horta"}>
+              <Link href={"psycho.ulb.be/faculte-d-architecture-la-cambre-horta"} className={styles.link}>
                 <p>Faculté d&apos;Architecture La Cambre Horta</p>
               </Link>
             </li>
             <li>
-              <Link href={"psycho.ulb.be/faculte-des-sciences"}>
+              <Link href={"psycho.ulb.be/faculte-des-sciences"} className={styles.link}>
                 <p>Faculté des Sciences</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://polytech.ulb.be/"}>
+              <Link href={"https://polytech.ulb.be/"} className={styles.link}>
                 <p>École polytechnique de Bruxelles</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://medecine.ulb.be/"}>
+              <Link href={"https://medecine.ulb.be/"} className={styles.link}>
                 <p>Faculté de Médecine</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://pharmacie.ulb.be/"}>
+              <Link href={"https://pharmacie.ulb.be/"} className={styles.link}>
                 <p>Faculté de Pharmacie</p>
               </Link>
             </li>
             <li>
-              <Link href={"psycho.ulb.be/ecole-de-sante-publique"}>
+              <Link href={"psycho.ulb.be/ecole-de-sante-publique"} className={styles.link}>
                 <p>École de Santé publique</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://fsm.ulb.be/"}>
+              <Link href={"https://fsm.ulb.be/"} className={styles.link}>
                 <p>Faculté des Sciences de la Motricité</p>
               </Link>
             </li>
             <hr />
             <li>
-              <Link href={"https://ltc.ulb.be/nos-departements-d-enseignement/ecole-de-traduction-et-interpretation-isti-cooremans-1"}>
+              <Link href={"https://ltc.ulb.be/nos-departements-d-enseignement/ecole-de-traduction-et-interpretation-isti-cooremans-1"} className={styles.link}>
                 <p>École de Traduction et Interprétation ISTI - Cooremans</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://bioing.ulb.be/"}>
+              <Link href={"https://bioing.ulb.be/"} className={styles.link}>
                 <p>École de Bioingénierie de Bruxelles</p>
               </Link>
             </li>
             <li>
-              <Link href={"psycho.ulb.be/pole-sante"}>
+              <Link href={"psycho.ulb.be/pole-sante"} className={styles.link}>
                 <p>Pôle Santé</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://iee.ulb.be/"}>
+              <Link href={"https://iee.ulb.be/"} className={styles.link}>
                 <p>Institut d&apos;études européennes</p>
               </Link>
             </li>
             <li>
-              <Link href={"https://education.ulb.be/"}>
+              <Link href={"https://education.ulb.be/"} className={styles.link}>
                 <p>Pôle éducation</p>
               </Link>
             </li>
@@ -167,7 +167,7 @@ export default function Footer() {
 
           <ul>
             <li>
-              <Link href={"https://psycho.ulb.be/facebook"}>
+              <Link href={"https://psycho.ulb.be/facebook"} className={styles.link}>
                 <Image
                   src={"/img/footer/fa-facebook.png"}
                   width={100}
@@ -177,7 +177,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href={"https://psycho.ulb.be/instagram"}>
+              <Link href={"https://psycho.ulb.be/instagram"} className={styles.link}>
                 <Image
                   src={"/img/footer/fa-instagram.png"}
                   width={100}
@@ -187,7 +187,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href={"https://psycho.ulb.be/linkedin"}>
+              <Link href={"https://psycho.ulb.be/linkedin"} className={styles.link}>
                 <Image
                   src={"/img/footer/fa-linkedin.png"}
                   width={100}
@@ -197,7 +197,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href={"https://psycho.ulb.be/ulb-tv"}>
+              <Link href={"https://psycho.ulb.be/ulb-tv"} className={styles.link}>
                 <Image
                   src={"/img/footer/fa-Youtube.png"}
                   width={100}
@@ -207,7 +207,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href={"https://psycho.ulb.be/scoop-it"}>
+              <Link href={"https://psycho.ulb.be/scoop-it"} className={styles.link}>
                 <Image
                   src={"/img/footer/ksup-scoopit.png"}
                   width={100}
@@ -219,7 +219,7 @@ export default function Footer() {
           </ul>
 
           <div className={styles.contacts}>
-            <Link href={"https://psycho.ulb.be/contacts"}>
+            <Link href={"https://psycho.ulb.be/contacts"} className={styles.link}>
               <Image
                 src={"/img/footer/illustration-footer-contacts.png"}
                 width={100}
@@ -228,7 +228,7 @@ export default function Footer() {
               />
               <p>Contacts</p>
             </Link>
-            <Link href={"https://psycho.ulb.be/emploi"}>
+            <Link href={"https://psycho.ulb.be/emploi"} className={styles.link}>
               <Image
                 src={"/img/footer/illustration-footer-emploi.png"}
                 width={100}
