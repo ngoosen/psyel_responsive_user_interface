@@ -32,7 +32,7 @@ export default function CoursPage() {
 
   useEffect(() => {
     if (cours.length > 0) {
-      setCurrentCours(cours[0]);
+      setCurrentCours(cours.find(c => c.mnemonique === params.mnemonique));
     }
   }, [cours]);
 
@@ -48,7 +48,7 @@ export default function CoursPage() {
             <p>Professeur titulaire: {currentCours.titulaire}</p>
           </div>
 
-          <CoursPageInscriptionsList inscriptions={inscriptions} notes={notes} />
+          <CoursPageInscriptionsList inscriptions={inscriptions} notes={notes} mnemonique={params.mnemonique} />
         </section>
       </main>
     );
