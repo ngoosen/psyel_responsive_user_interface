@@ -36,7 +36,6 @@ For this project, I developed a local proxy that consumes an external API, using
 
 This project is not yet quite done. Things I still need to work on includes (but are not limited to):
 
-- Add a footer
 - Add a search bar to filter lessons
 - Add a global context to handle the data and reduce/optimize the current API calls
 - Really show off my CSS/SCSS skills by adding crispier transitions, animations and interactions for a beautiful and less boring design.
