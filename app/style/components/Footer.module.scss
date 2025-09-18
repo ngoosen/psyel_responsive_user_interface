@@ -223,6 +223,10 @@
 
           &:hover {
             background-color: #ffffff48;
+
+            p {
+              background-color: transparent;
+            }
           }
 
           &:first-of-type {
