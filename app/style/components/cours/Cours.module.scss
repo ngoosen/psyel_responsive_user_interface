@@ -1,7 +1,7 @@
 .main {
   min-height: 50lvh;
 
-  input {
+  .title_input {
     appearance: none;
 
     width: 100%;
@@ -13,6 +13,16 @@
       content: "Cours";
       font-size: 2rem;
     }
+  }
+
+  .no_result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 20px;
   }
 
   ul {
@@ -31,7 +41,7 @@
   .main {
     min-height: unset;
 
-    input {
+    .title_input {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -48,14 +58,17 @@
       }
     }
 
-    ul {
+    .content {
       display: none;
     }
 
-    input:checked + ul {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 10px;
+    input[type="checkbox"]:checked + .content {
+      display: block;
+
+      ul {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+      }
     }
   }
 }
