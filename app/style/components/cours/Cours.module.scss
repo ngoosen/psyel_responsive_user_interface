@@ -29,6 +29,8 @@
 
 @media (max-width: 400px) {
   .main {
+    min-height: unset;
+
     input {
       display: flex;
       justify-content: space-between;

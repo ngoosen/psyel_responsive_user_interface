@@ -239,6 +239,7 @@
       img {
         width: auto;
         height: auto;
+        min-height: 30px;
       }
     }
   }
@@ -298,6 +299,35 @@
   .footer {
     &::before {
       display: none;
+    }
+
+    .links {
+      > article {
+        ul {
+          li {
+            margin: 15px 0;
+          }
+
+          hr {
+            margin: 20px 0;
+          }
+        }
+      }
+
+      .about {
+        width: auto;
+      }
+
+      .socials {
+        h3,
+        ul {
+          margin-left: 0;
+        }
+
+        ul {
+          justify-content: space-between;
+        }
+      }
     }
   }
 }
