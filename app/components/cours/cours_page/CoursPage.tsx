@@ -8,8 +8,6 @@ import { useEffect, useState } from "react";
 import styles from "../../../style/components/cours/cours_page/CoursPage.module.scss";
 
 import useCours, { COURS } from "@/app/hooks/useCours";
-import useInscriptions from "@/app/hooks/useInscriptions";
-import useNotes from "@/app/hooks/useNotes";
 import CoursPageInscriptionsList from "./CoursPageInscriptionsList";
 
 const firaSansLight = localFont({ src: "../../../assets/fonts/FiraSans-Light.ttf" });
@@ -19,15 +17,11 @@ export default function CoursPage() {
   const params = useParams<{ mnemonique: string }>();
 
   const [cours,, getCoursByMnemonique] = useCours();
-  const [notes, getNotes] = useNotes();
-  const [inscriptions, getInscriptions] = useInscriptions();
 
   const [currentCours, setCurrentCours] = useState<COURS>();
 
   useEffect(() => {
     getCoursByMnemonique(params.mnemonique);
-    getNotes();
-    getInscriptions();
   }, []);
 
   useEffect(() => {
@@ -48,11 +42,11 @@ export default function CoursPage() {
             <p>Professeur titulaire: {currentCours.titulaire}</p>
           </div>
 
-          <CoursPageInscriptionsList inscriptions={inscriptions} notes={notes} mnemonique={params.mnemonique} />
+          <CoursPageInscriptionsList mnemonique={params.mnemonique} />
         </section>
       </main>
     );
   }
 
-  return <></>;
+  return <main className={styles.main}></main>;
 }

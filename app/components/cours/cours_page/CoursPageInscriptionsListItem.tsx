@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import styles from "../../../style/components/cours/cours_page/CoursPageInscriptionsListItem.module.scss";
 
 import { COURS_INSCRIPTION_NOTE } from "./CoursPageInscriptionsList";

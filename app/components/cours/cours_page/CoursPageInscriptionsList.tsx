@@ -1,15 +1,13 @@
-import { NOTE } from "@/app/hooks/useNotes";
+import { useContext, useEffect, useState } from "react";
 
 import styles from "../../../style/components/cours/cours_page/CoursPageInscriptionsList.module.scss";
 
-import { INSCRIPTION } from "@/app/hooks/useInscriptions";
-import { useEffect, useState } from "react";
+import { DataContext } from "@/app/hooks/contexts/useData";
+
 import CoursPageInscriptionsListItem from "./CoursPageInscriptionsListItem";
 
 interface COURS_PAGE_INSCRIPTIONS_LIST_PROPS {
   mnemonique: string;
-  inscriptions: INSCRIPTION[];
-  notes: NOTE[];
 }
 
 export interface COURS_INSCRIPTION_NOTE {
@@ -20,13 +18,14 @@ export interface COURS_INSCRIPTION_NOTE {
 }
 
 export default function CoursPageInscriptionsList(props: COURS_PAGE_INSCRIPTIONS_LIST_PROPS) {
-  const {
-    mnemonique,
-    inscriptions,
-    notes,
-  } = props;
+  const { mnemonique, } = props;
 
   const [coursInscriptions, setCoursInscriptions] = useState<COURS_INSCRIPTION_NOTE[]>([]);
+
+  const {
+    inscriptions,
+    notes,
+  } = useContext(DataContext);
 
   useEffect(() => {
     const filteredInscriptions = inscriptions.filter(inscr => inscr.cours_json.includes(mnemonique));
