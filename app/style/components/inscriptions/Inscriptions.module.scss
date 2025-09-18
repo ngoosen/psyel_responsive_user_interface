@@ -1,5 +1,5 @@
 .main {
-  input {
+  .title_input {
     appearance: none;
 
     width: 100%;
@@ -13,6 +13,16 @@
     }
   }
 
+  .no_result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 20px;
+  }
+
   .inscriptions_list {
     display: grid;
     gap: 5px;
@@ -24,7 +34,7 @@
 
 @media (max-width: 400px) {
   .main {
-    input {
+    .title_input {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -41,12 +51,12 @@
       }
     }
 
-    .inscriptions_list {
+    .content {
       display: none;
     }
 
-    input:checked + .inscriptions_list {
-      display: grid;
+    input[type="checkbox"]:checked + .content {
+      display: block;
     }
   }
 }
