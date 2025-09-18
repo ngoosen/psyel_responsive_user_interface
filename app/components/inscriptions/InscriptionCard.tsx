@@ -15,7 +15,7 @@ export default function InscriptionCard(props: INSCRIPTION_CARD_PROPS) {
   return (
     <Link href={`/inscription/${inscription.matricule}`} className={styles.link_container}>
       <article className={styles.main}>
-        <p>{inscription.nom} {inscription.prenom}</p>
+        <p>{inscription.nom.toUpperCase()} {inscription.prenom}</p>
       </article>
     </Link>
   );
