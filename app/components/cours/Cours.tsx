@@ -1,24 +1,21 @@
 "use client";
 
 import localFont from "next/font/local";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import styles from "../../style/components/cours/Cours.module.scss";
 
-import useCours, { COURS } from "../../hooks/useCours";
+import { DataContext } from "@/app/hooks/contexts/useData";
+import { COURS } from "../../hooks/useCours";
 
 import CoursCard from "./CoursCard";
 
 const firaSansSemiBold = localFont({ src: "../../assets/fonts/FiraSans-SemiBold.ttf" });
 
 export default function Cours() {
-  const [cours, getCours] = useCours();
   const [displayedCours, setDisplayedCours] = useState<COURS[]>([]);
 
-  useEffect(() => {
-    getCours();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { cours, } = useContext(DataContext);
 
   useEffect(() => {
     setDisplayedCours(cours.sort((cours1, cours2) => cours1.intitule.localeCompare(cours2.intitule)));

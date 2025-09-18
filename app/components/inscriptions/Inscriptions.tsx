@@ -1,23 +1,21 @@
 "use client";
 
 import localFont from "next/font/local";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import styles from "../../style/components/inscriptions/Inscriptions.module.scss";
 
-import useInscriptions, { INSCRIPTION } from "../../hooks/useInscriptions";
+import { DataContext } from "@/app/hooks/contexts/useData";
+import { INSCRIPTION } from "../../hooks/useInscriptions";
+
 import InscriptionCard from "./InscriptionCard";
 
 const firaSansSemiBold = localFont({ src: "../../assets/fonts/FiraSans-SemiBold.ttf" });
 
 export default function Inscriptions() {
-  const [inscriptions, getInscriptions] = useInscriptions();
   const [displayedInscriptions, setDisplayedInscriptions] = useState<INSCRIPTION[]>([]);
 
-  useEffect(() => {
-    getInscriptions();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { inscriptions, } = useContext(DataContext);
 
   useEffect(() => {
     const filteredSortedInscriptions = [...new Map(inscriptions.map(inscr => [inscr.matricule, inscr])).values()]
