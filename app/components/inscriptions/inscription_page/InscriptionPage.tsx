@@ -7,7 +7,6 @@ import { useEffect } from "react";
 
 import styles from "../../../style/components/inscriptions/inscription_page/InscriptionPage.module.scss";
 
-import useCours from "@/app/hooks/useCours";
 import useInscriptions from "@/app/hooks/useInscriptions";
 import InscriptionPageCoursList from "./InscriptionPageCoursList";
 
@@ -17,15 +16,10 @@ const firaSansSemiBold = localFont({ src: "../../../assets/fonts/FiraSans-SemiBo
 export default function InscriptionPage() {
   const params = useParams<{ matricule: string }>();
   const [inscription,, getInscription] = useInscriptions();
-  const [cours, getCours] = useCours();
 
   useEffect(() => {
     getInscription(params.matricule);
   }, [params.matricule]);
-
-  useEffect(() => {
-    getCours();
-  }, [inscription]);
 
   if (inscription.length > 0) {
     return (
@@ -37,7 +31,7 @@ export default function InscriptionPage() {
 
           <section className={styles.inscription_annee_etude}>
             {inscription.map((inscr, index) => (
-              <InscriptionPageCoursList key={`inscription_${index}`} inscription={inscr} cours={cours} />
+              <InscriptionPageCoursList key={`inscription_${index}`} inscription={inscr} />
             ))}
           </section>
         </section>
@@ -46,7 +40,6 @@ export default function InscriptionPage() {
   }
 
   return (
-    <>
-    </>
+    <main className={styles.main}></main>
   );
 }

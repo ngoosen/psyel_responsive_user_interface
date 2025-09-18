@@ -1,20 +1,21 @@
 import styles from "../../../style/components/inscriptions/inscription_page/InscriptionPageCoursList.module.scss";
 
-import { COURS } from "@/app/hooks/useCours";
 import { INSCRIPTION } from "@/app/hooks/useInscriptions";
 
+import { DataContext } from "@/app/hooks/contexts/useData";
+import { useContext } from "react";
 import InscriptionPageCoursListItem from "./InscriptionPageCoursListItem";
 
 interface INSCRIPTION_PAGE_ANNEE_ETUDE_PROPS {
   inscription: INSCRIPTION
-  cours: COURS[]
 }
 
 export default function InscriptionPageCoursList(props: INSCRIPTION_PAGE_ANNEE_ETUDE_PROPS) {
   const {
     inscription,
-    cours,
   } = props;
+
+  const { cours, } = useContext(DataContext);
 
   return (
     <article className={styles.main}>
