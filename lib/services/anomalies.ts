@@ -10,7 +10,7 @@ enum ANOMALY_TYPE {
   NOTE_SANS_CREDIT,
 }
 
-interface ANOMALIES {
+interface ANOMALY {
   type: ANOMALY_TYPE;
   matricule: string;
   annee: number;
@@ -27,90 +27,78 @@ export async function reportAnomalies(
   inscriptions: INSCRIPTION[],
   cours: COURS[],
   notes: NOTE[]
-): Promise<ANOMALIES[]> {
-  const results: ANOMALIES[] = [];
+): Promise<ANOMALY[]> {
+  const results: ANOMALY[] = [];
 
-  const notesByStudent = new Map<string, number>();
+  const coursMap = new Map<string, COURS>();
+  cours.forEach(c => coursMap.set(c.mnemonique, c));
+
+  const notesByStudent = new Map<string, NOTE[]>();
   const duplicates: string[] = [];
 
   for (const note of notes) {
     const key = `${note.matricule}-${note.mnemonique}`;
-
-    if (notesByStudent.has(key)) {
-      duplicates.push(note.matricule);
+    if (!notesByStudent.has(note.matricule)) {
+      notesByStudent.set(note.matricule, []);
     }
 
-    notesByStudent.set(key, note.note);
+    const studentNotes = notesByStudent.get(note.matricule)!;
+    if (studentNotes.some(n => n.mnemonique === note.mnemonique)) {
+      duplicates.push(key);
+    }
+    studentNotes.push(note);
   }
 
   for (const inscription of inscriptions) {
     const anomalies: ANOMALY_TYPE[] = [];
-
-    const inscriptionNotes = notes.filter(note => note.matricule === inscription.matricule);
-    const attendedCours = cours.filter(cour => inscription.cours_json.includes(cour.mnemonique));
-
-    const noteSansCredit: number[] = [];
-
-    inscriptionNotes.forEach(note => {
-      const foundNote = attendedCours.filter(cours => cours.mnemonique === note.mnemonique);
-
-      if (!foundNote) {
-        anomalies.push(ANOMALY_TYPE.NOTE_SANS_INSCRIPTION);
-      }
-    });
+    const attendedCours: COURS[] = [];
 
     const parsedCours: string[] = JSON.parse(inscription.cours_json.toString());
 
     parsedCours.forEach(mnemonique => {
-      const foundCours = cours.filter(c => c.mnemonique === mnemonique);
-
-      if (!foundCours) {
+      const c = coursMap.get(mnemonique);
+      if (c) {
+        attendedCours.push(c);
+      } else {
         anomalies.push(ANOMALY_TYPE.COURS_INCONNU);
       }
     });
 
-    if (inscription.cours_json.length === 0) {
-      anomalies.push(ANOMALY_TYPE.INSCRIPTION_SANS_COURS);
-    }
+    const studentNotes = notesByStudent.get(inscription.matricule) ?? [];
 
-    if (duplicates.length > 0) {
-      const filtered = duplicates.filter(matricule => matricule === inscription.matricule);
-
-      if (filtered.length > 0) {
-        filtered.forEach(() => {
-          anomalies.push(ANOMALY_TYPE.DUPLICATA_NOTE);
-        })
+    studentNotes.forEach(note => {
+      if (!parsedCours.includes(note.mnemonique)) {
+        anomalies.push(ANOMALY_TYPE.NOTE_SANS_INSCRIPTION);
       }
-    }
+    });
+
+    const studentDuplicates = duplicates.filter(d => d.startsWith(inscription.matricule));
+    studentDuplicates.forEach(() => {
+      anomalies.push(ANOMALY_TYPE.DUPLICATA_NOTE);
+    });
+
+    const noteSansCredit = studentNotes.filter((note) => {
+      return attendedCours.some((c) => c.mnemonique === note.mnemonique && (!c.credit || c.credit <= 0));
+    });
 
     if (noteSansCredit.length > 0) {
-      noteSansCredit.forEach(() => {
-        anomalies.push(ANOMALY_TYPE.NOTE_SANS_CREDIT);
-      });
+      anomalies.push(ANOMALY_TYPE.NOTE_SANS_CREDIT);
     }
 
     if (anomalies.length > 0) {
-      const details = attendedCours.map((cour) => {
-        const note = notesByStudent.get(`${inscription.matricule}-${cour.mnemonique}`);
-
-        if (note && (cour.credit === undefined || cour.credit <= 0)) {
-          noteSansCredit.push(note);
-        }
-
-        return {
-          ...cour,
-          note,
-        }
+      const details = attendedCours.map(c => {
+        const note = studentNotes.find(n => n.mnemonique === c.mnemonique)?.note;
+        return { ...c, note };
       });
 
-      anomalies.forEach((type) => {
+      anomalies.forEach(type => {
         results.push({
           type,
           matricule: inscription.matricule,
           annee: inscription.annee_etude,
           details,
         });
-      })
+      });
     }
   }
 
