@@ -33,38 +33,48 @@ export async function reportAnomalies(
   const coursMap = new Map<string, COURS>();
   cours.forEach(c => coursMap.set(c.mnemonique, c));
 
-  const notesByStudent = new Map<string, NOTE[]>();
+  const notesByStudent = new Map<string, NOTE>();
   const duplicates: string[] = [];
 
   for (const note of notes) {
     const key = `${note.matricule}-${note.mnemonique}`;
-    if (!notesByStudent.has(note.matricule)) {
-      notesByStudent.set(note.matricule, []);
+
+    if (notesByStudent.has(key)) {
+      duplicates.push(note.matricule);
     }
 
-    const studentNotes = notesByStudent.get(note.matricule)!;
-    if (studentNotes.some(n => n.mnemonique === note.mnemonique)) {
-      duplicates.push(key);
-    }
-    studentNotes.push(note);
+    notesByStudent.set(key, note);
   }
 
   for (const inscription of inscriptions) {
     const anomalies: ANOMALY_TYPE[] = [];
     const attendedCours: COURS[] = [];
+    const studentNotes: NOTE[] = [];
 
-    const parsedCours: string[] = JSON.parse(inscription.cours_json.toString());
+    const parsedCours: string[] = Array.isArray(inscription.cours_json) ? inscription.cours_json : JSON.parse((inscription.cours_json as string).toString());
 
     parsedCours.forEach(mnemonique => {
-      const c = coursMap.get(mnemonique);
-      if (c) {
-        attendedCours.push(c);
+      const cours = coursMap.get(mnemonique);
+
+      if (cours) {
+        attendedCours.push(cours);
       } else {
+        attendedCours.push({
+          mnemonique,
+          intitule: "",
+          credit: 0,
+          titulaire: ""
+        });
+
         anomalies.push(ANOMALY_TYPE.COURS_INCONNU);
       }
-    });
 
-    const studentNotes = notesByStudent.get(inscription.matricule) ?? [];
+      const note = notesByStudent.get(`${inscription.matricule}-${mnemonique}`);
+
+      if (note) {
+        studentNotes.push(note);
+      }
+    });
 
     studentNotes.forEach(note => {
       if (!parsedCours.includes(note.mnemonique)) {
@@ -86,9 +96,9 @@ export async function reportAnomalies(
     }
 
     if (anomalies.length > 0) {
-      const details = attendedCours.map(c => {
-        const note = studentNotes.find(n => n.mnemonique === c.mnemonique)?.note;
-        return { ...c, note };
+      const details = attendedCours.map(cours => {
+        const note = studentNotes.find(n => n.mnemonique === cours.mnemonique)?.note;
+        return { ...cours, note };
       });
 
       anomalies.forEach(type => {
