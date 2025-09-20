@@ -30,7 +30,7 @@ I chose to use a simple design, for a time reason as well as for clarity and eas
 
 I decided to use this project to challenge my CSS skills by using as few libraries as possible and use a CSS first approach. For this reason, I also tried to not use too much Typescript for user interaction.
 
-For this project, I developed a local proxy that consumes an external API, using the tools offered by Next.js.
+For this project, I developed a local proxy that consumes an external API, using the tools offered by Next.js. I also created 2 endpoints to compile data from the external API.
 
 ## Next up
 
