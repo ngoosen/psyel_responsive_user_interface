@@ -72,7 +72,7 @@ export async function computeBulletins(
       };
     });
 
-    const moyenne_ponderee = creditCoursNotes > 0 ? notePonderee / creditCoursNotes : 0;
+    const moyenne_ponderee = creditCoursNotes > 0 ? Math.round((notePonderee / creditCoursNotes) * 100) / 100 : 0;
 
     const reussite = ects_obtenus >= 60 || (moyenne_ponderee >= 10 && allCoursEvaluated);
 
